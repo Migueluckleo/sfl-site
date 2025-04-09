@@ -1,0 +1,42 @@
+<!-- Navbar -->
+        <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 z-50">
+          <div class="mx-auto max-w-[1920px] px-6 flex justify-between items-center h-25">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+              <img src="src/assets/SF-logotipo-slogan.png" alt="Logo" class="h-20">
+              
+            </a>
+      
+            <!-- Menú Desktop -->
+            <ul class="hidden md:flex space-x-8 text-gray-700">
+              <li><a href="index.html" class="nav-link hover:text-sf-blue">Inicio</a></li>
+              <li><a href="unidades.html" class="nav-link hover:text-sf-blue">Unidades</a></li>
+              <li><a href="cobertura.html" class="nav-link hover:text-sf-blue">Cobertura</a></li>
+              <li><a href="clientes.html" class="nav-link hover:text-sf-blue">Nuestros clientes</a></li>
+            </ul>
+      
+            <!-- Icono WhatsApp -->
+
+            <a href="https://wa.me/523313300421" class="hidden md:flex flex-row gap-4  items-center py-2 px-4 rounded-xl bg-sf-blue hover:bg-sf-blue/95 text-white text-2xl">
+              <i class="ri-whatsapp-line"></i>
+              <p class="text-[16px] font-semibold">Contáctanos</p>
+            </a>
+      
+            <!-- Menú Mobile -->
+            <button id="menuToggle" class="md:hidden text-[#185183] text-3xl">
+              <i class="ri-menu-line"></i>
+            </button>
+      
+          </div>
+      
+          <!-- Menú Responsive -->
+          <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white shadow-md md:hidden">
+            <ul class="flex flex-col items-center py-4 space-y-4 text-gray-700">
+              <li><a href="index.html" class="nav-link hover:text-sf-blue">Inicio</a></li>
+              <li><a href="unidades.html" class="nav-link hover:text-sf-blue">Unidades</a></li>
+              <li><a href="cobertura.html" class="nav-link hover:text-sf-blue">Cobertura</a></li>
+              <li><a href="clientes.html" class="nav-link hover:text-sf-blue">Nuestros clientes</a></li>
+            </ul>
+          </div>
+        </nav>

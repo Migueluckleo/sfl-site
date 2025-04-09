@@ -1,0 +1,25 @@
+# ❌ Node.js y Tailwind build system
+node_modules/
+package.json
+package-lock.json
+tailwind.config.js
+postcss.config.js
+
+# ❌ Dev source files
+src/input.css
+src/output.css
+src/
+
+# ❌ Configs y backups
+.DS_Store
+*.log
+*.env
+.vscode/
+*.bak
+*.tmp
+
+# ❌ GitHub workflows si no quieres deploy automático desde este repo
+.github/
+
+# ❌ MacOS metadata
+Icon?
