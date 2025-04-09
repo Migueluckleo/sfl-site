@@ -1,25 +1,32 @@
-# ❌ Node.js y Tailwind build system
+# ────────────── 📦 DEPENDENCIAS Y BUILDS ──────────────
 node_modules/
-package.json
-package-lock.json
+dist/
+build/
+
+# ────────────── ⚙️ CONFIGURACIÓN Y TOOLS ──────────────
 tailwind.config.js
 postcss.config.js
 
-# ❌ Dev source files
-src/input.css
-src/output.css
-src/
-
-# ❌ Configs y backups
+# ────────────── 🚫 ARCHIVOS DE SISTEMA Y METADATA ──────────────
 .DS_Store
+Thumbs.db
 *.log
-*.env
+.env
 .vscode/
+.idea/
 *.bak
 *.tmp
 
-# ❌ GitHub workflows si no quieres deploy automático desde este repo
-.github/
+# ────────────── 💻 CONFIGS DE GIT Y CI/CD ──────────────
+.github/            # (si no haces deploy desde este repo)
+.gitlab/
+.gitattributes
+.gitattributes.lock
 
-# ❌ MacOS metadata
-Icon?
+# ────────────── ⚠️ ARCHIVOS DEL PROYECTO A IGNORAR DEL DEPLOY ──────────────
+# ⛔️ Estos se quedan en Git pero **no deben ir al servidor FTP**
+package.json
+package-lock.json
+
+# ❗️EXCEPCIONES: NO ignoramos `src/input.css` porque lo usas para Tailwind
+# ❗️NO ignoramos `src/output.css` porque es el CSS final del sitio

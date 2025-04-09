@@ -1,0 +1,35 @@
+name: 🚀 Deploy vía FTP al hosting del cliente
+
+on:
+  push:
+    branches:
+      - main  # Cambia esto si tu rama se llama diferente
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: 🚀 Subir archivos por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftp
+          server-dir: /public_html/              # ⚠️ Cambia si necesitas una subcarpeta
+          local-dir: ./                          # Tu estructura actual se mantiene
+          exclude: |
+            **/node_modules/**
+            **/.git/**
+            **/.github/**
+            **/tailwind.config.js
+            **/postcss.config.js
+            **/src/input.css                     # ← ⛔️ NO subir input.css al servidor
+            package.json
+            package-lock.json
+            .DS_Store
+            .env
