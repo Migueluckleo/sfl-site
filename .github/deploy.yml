@@ -3,7 +3,7 @@ name: 🚀 Deploy vía FTP al hosting del cliente
 on:
   push:
     branches:
-      - main  # Cambia esto si tu rama se llama diferente
+      - main
 
 jobs:
   deploy:
@@ -20,15 +20,15 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           protocol: ftp
-          server-dir: /public_html/              # ⚠️ Cambia si necesitas una subcarpeta
-          local-dir: ./                          # Tu estructura actual se mantiene
+          server-dir: /public_html/    # Ruta estándar, cambiar solo si te indican otra
+          local-dir: ./                # Sube todo el repo (respetando .gitignore y exclude)
           exclude: |
             **/node_modules/**
             **/.git/**
             **/.github/**
             **/tailwind.config.js
             **/postcss.config.js
-            **/src/input.css                     # ← ⛔️ NO subir input.css al servidor
+            **/src/input.css
             package.json
             package-lock.json
             .DS_Store
