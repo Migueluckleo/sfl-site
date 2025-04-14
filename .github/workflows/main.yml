@@ -1,0 +1,35 @@
+name: 🚀 Deploy vía FTP al hosting del cliente
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: 🚀 Subir archivos por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          server-dir: public_html/sflogistica.mx    # Ruta estándar, cambiar solo si te indican otra
+          local-dir: ./                # Sube todo el repo (respetando .gitignore y exclude)
+          exclude: |
+            **/node_modules/**
+            **/.git/**
+            **/.github/**
+            **/tailwind.config.js
+            **/postcss.config.js
+            **/src/input.css
+            package.json
+            package-lock.json
+            .DS_Store
+            .env
