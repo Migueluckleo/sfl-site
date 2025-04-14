@@ -19,7 +19,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          protocol: ftp
+          protocol: ftps
           server-dir: /public_html/    # Ruta estándar, cambiar solo si te indican otra
           local-dir: ./                # Sube todo el repo (respetando .gitignore y exclude)
           exclude: |
